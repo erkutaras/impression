@@ -5,14 +5,23 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.trendyol.impression'
 
+ext {
+    GROUP_ID = 'com.trendyol'
+    ARTIFACT_ID = 'impression'
+}
+
 android {
     compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 4
-        versionName "1.0.3"
+        versionCode 2
+        versionName "1.0.1"
+    }
+    
+    compileOptions {
+        kotlinOptions.freeCompilerArgs += ['-module-name', "$GROUP_ID.$ARTIFACT_ID"]
     }
 
     buildTypes {
